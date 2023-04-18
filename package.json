@@ -1,0 +1,48 @@
+{
+  "name": "@oliverlockwood/express-http-context-intermediate-library",
+  "version": "1.0.0-DEV",
+  "description": "An intermediate library, which makes use of express-http-context, to demonstrate existence (or otherwise!) of a bug",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "postinstall": "yarn build && yarn copy-files",
+    "build": "rimraf ./dist; tsc -p tsconfig.json",
+    "copy-files": "cp README.md .npmrc dist/ && cat package.json | jq '. | del(.scripts) | del(.devDependencies)' >dist/package.json",
+    "test": "node --unhandled-rejections=strict ./node_modules/.bin/mocha --config test/.mocharc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverlockwood/express-http-context-intermediate-library.git"
+  },
+  "keywords": [
+    "express",
+    "http",
+    "request",
+    "context"
+  ],
+  "author": "Oliver Lockwood",
+  "contributors": [
+    "Oliver Lockwood (@oliverlockwood)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliverlockwood/express-http-context-intermediate-library/issues"
+  },
+  "homepage": "https://github.com/oliverlockwood/express-http-context-intermediate-library#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "4.18.2",
+    "express-http-context2": "1.0.0",
+    "nanoid": "3.3.4"
+  },
+  "devDependencies": {
+    "rimraf": "4.4.1",
+    "ts-node": "10.9.1",
+    "typescript": "5.0.3"
+  }
+}

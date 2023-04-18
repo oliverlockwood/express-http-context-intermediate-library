@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "16"
+  - "18"
+before_install:
+  - npm i -g yarn
+install:
+  - yarn install
