@@ -1,5 +1,5 @@
 import { Application, NextFunction, Request, Response } from 'express';
-import httpContext from 'express-http-context2';
+import httpContext from '@dalet-oss/express-http-context';
 import { nanoid } from 'nanoid';
 
 const REQUEST_ID_HTTP_HEADER_NAME = 'my-request-id';
